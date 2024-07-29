@@ -1,12 +1,12 @@
 import React from 'react';
 
-interface skillProperties {
+interface SkillProps {
   name: string,
   description: string 
 }
 
 
-function Skill({name, description}: skillProperties) {
+function Skill({name, description}: SkillProps) {
   return (
     <div className="Skill">
       <p>{name}</p>
