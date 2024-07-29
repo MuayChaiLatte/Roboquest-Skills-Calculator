@@ -11,7 +11,7 @@ const mockSkillsAvailableToThisClass: { name: string, description: string } = {
 test("Skill renders successfully", () => {
     
     // Render Component
-    render(<Skill/>);
+    render(<Skill name={mockSkillsAvailableToThisClass.name} description={mockSkillsAvailableToThisClass.description} />);
 
     // Grab element containing skill text based on if it matches "placeholder skill", ignoring case
     const element = screen.getByText(mockSkillsAvailableToThisClass.description);
