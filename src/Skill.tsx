@@ -6,10 +6,11 @@ interface skillProperties {
 }
 
 
-function Skill() {
+function Skill({name, description}: skillProperties) {
   return (
     <div className="Skill">
-      <p>Placeholder Skill</p>
+      <p>{name}</p>
+      <p>{description}</p>
     </div>
   );
 }
