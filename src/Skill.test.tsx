@@ -8,7 +8,7 @@ const mockSkillAvailableToThisClass: { name: string, description: string } = {
     description: 'While Bastion is active, increases weapons damage by 30%, firerate by 30% and movement speed by 18%.'
 }
 
-test("Skill renders successfully", () => {
+test("Skill renders with the correct description", () => {
     
     // Render Component
     render(<Skill name={mockSkillAvailableToThisClass.name} description={mockSkillAvailableToThisClass.description} />);
