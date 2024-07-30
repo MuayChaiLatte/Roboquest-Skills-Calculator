@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Skill from './Skill';
+import userEvent from '@testing-library/user-event';
 
 // Making test data
 const mockSkillAvailableToThisClass: { name: string, description: string } = {
@@ -20,4 +21,10 @@ test("Skill renders with the correct description", () => {
     // Assertion: correct elements exist and display correct information
     expect(nameElement).toBeInTheDocument
     expect(descriptionElement).toBeInTheDocument
+})
+
+test("Toggle Selected Flag text visible", async () => {
+    render(<Skill name={mockSkillAvailableToThisClass.name} description={mockSkillAvailableToThisClass.description} />);
+    await userEvent.click(screen.getByText(/skill selected/i));
+    expect(screen.getByText(/skill selected/i)).toBeInTheDocument();
 })
