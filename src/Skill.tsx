@@ -14,6 +14,7 @@ function Skill({name, description}: SkillProps) {
     <div className="Skill">
       <p>{name}</p>
       <p>{description}</p>
+      <button onClick={() => {setToggleSelected(!toggleSelected)}}>Choose</button>
       <p>{toggleSelected && 'Skill Selected'}</p>
     </div>
   );
