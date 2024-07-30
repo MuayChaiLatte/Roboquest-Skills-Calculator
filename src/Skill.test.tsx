@@ -13,9 +13,11 @@ test("Skill renders with the correct description", () => {
     // Render Component
     render(<Skill name={mockSkillAvailableToThisClass.name} description={mockSkillAvailableToThisClass.description} />);
 
-    // Grab element containing skill text based on if it matches "placeholder skill", ignoring case
-    const element = screen.getByText(mockSkillAvailableToThisClass.description);
+    // Grab elements the Component should have rendered
+    const nameElement = screen.getByText(mockSkillAvailableToThisClass.name);
+    const descriptionElement = screen.getByText(mockSkillAvailableToThisClass.description);
     
-    // Assertion: element exists and contains correct text
-    expect(element).toBeInTheDocument
+    // Assertion: correct elements exist and display correct information
+    expect(nameElement).toBeInTheDocument
+    expect(descriptionElement).toBeInTheDocument
 })
