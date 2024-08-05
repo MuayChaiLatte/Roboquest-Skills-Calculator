@@ -1,10 +1,15 @@
 import React from 'react';
 
-function CharacterSummary() {
+interface CharacterSummaryProps {
+  characterName: string,
+  characterLevel: number
+}
+
+function CharacterSummary({characterName, characterLevel}: CharacterSummaryProps) {
   return (
     <div className="CharacterSummary">
-      <p>Character Name</p>
-      <p>Level: 1</p>
+      <p>{characterName}</p>
+      <p>Level: {characterLevel}</p>
     </div>
   );
 }
