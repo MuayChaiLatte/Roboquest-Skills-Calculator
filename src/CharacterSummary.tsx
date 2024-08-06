@@ -1,18 +1,15 @@
 import React from 'react';
-import {useState} from 'react';
-
 
 interface CharacterSummaryProps {
   characterName: string,
+  characterLevel: number
 }
 
-function CharacterSummary({characterName}: CharacterSummaryProps) {
-  const [characterLevel, setCharacterLevel] = useState(1)
+function CharacterSummary({characterName, characterLevel}: CharacterSummaryProps) {
   return (
     <div className="CharacterSummary">
       <p>{characterName}</p>
       <p>Level: {characterLevel}</p>
-      <button onClick={() => {setCharacterLevel(characterLevel+1)}}>Level Up</button>
     </div>
   );
 }
