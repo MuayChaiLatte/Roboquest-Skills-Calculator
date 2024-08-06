@@ -3,19 +3,20 @@ import {useState} from 'react';
 
 interface SkillProps {
   name: string,
-  description: string 
+  description: string,
+  isSkillSelected: Boolean,
+  onSkillClick: React.MouseEventHandler
 }
 
 
-function Skill({name, description}: SkillProps) {
-  const [toggleSelected, setToggleSelected] = useState(false)
+function Skill({name, description, isSkillSelected, onSkillClick}: SkillProps) {
   
   return (
     <div className="Skill">
       <p>{name}</p>
       <p>{description}</p>
-      <button onClick={() => {setToggleSelected(!toggleSelected)}}>Choose</button>
-      <p>{toggleSelected && 'Skill Selected'}</p>
+      <button onClick={onSkillClick}>Select</button>
+      <p>{isSkillSelected && 'Skill Selected'}</p>
     </div>
   );
 }
