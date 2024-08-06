@@ -4,7 +4,6 @@ import {useState} from 'react';
 
 interface CharacterSummaryProps {
   characterName: string,
-  characterLevel: number
 }
 
 function CharacterSummary({characterName}: CharacterSummaryProps) {
