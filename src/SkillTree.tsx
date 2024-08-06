@@ -3,8 +3,17 @@ import {useState} from 'react';
 import CharacterSummary from './CharacterSummary';
 import Skill from './Skill';
 
+interface ClassSkill {
+    skillName: string,
+    skillDescription: string
+}
 
-function SkillTree() {
+interface CharacterClassDataProps {
+    characterClassName: string,
+    allCharacterClassSkills: ClassSkill[]
+}
+
+function SkillTree({characterClassName, allCharacterClassSkills} : CharacterClassDataProps) {
     const totalNumberOfSkillsAvailableToClass = 1
     const [skillsSelected, setSkillsSelected] = useState(Array(totalNumberOfSkillsAvailableToClass).fill(false))
     const [characterLevel, setCharacterLevel] = useState(1)
