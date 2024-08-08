@@ -18,7 +18,10 @@ I am still building the initial skeleton and core functionality, not ready to be
 - Typescript
 - React
 
-## Code Optimisation/Decision Highlights
+## Code Design - Optimisation/Decision Highlights
 
 - Simplifying level calculation based on number of Perks selected https://github.com/MuayChaiLatte/Roboquest-Skills-Calculator/commit/9943565e03bbeb9b644172cd0cd4208f71a510df
     - Character level should increment by 1 per new Perk chosen. Initially thought to count the number of selected perks to link level to perks. Instead opted to abstract. Level now simply knows to increment or decrement based on if the perk state change was to enabled or to disabled respectively. The cost to calculate level is now always low and static. Will not change if I want to have a very large number of perks available.
+
+-  Unit tests checking level changes correctly based on Perks selection - https://github.com/MuayChaiLatte/Roboquest-Skills-Calculator/commit/1d592b2694844170b814fe267837795cbd847a8f
+    - Expanded my coverage to account for scenarios where multiple perks are selected sequentially as well as when perks are selected then deselected 
