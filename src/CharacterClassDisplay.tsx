@@ -8,12 +8,12 @@ interface ClassPerk {
     perkDescription: string
 }
 
-interface CharacterClassDisplayProps {
+export interface CharacterClassDisplayProps {
     characterClassName: string,
     allCharacterClassPerks: ClassPerk[]
 }
 
-function CharacterClassDisplay({characterClassName, allCharacterClassPerks} : CharacterClassDisplayProps) {
+export function CharacterClassDisplay({characterClassName, allCharacterClassPerks} : CharacterClassDisplayProps) {
     const totalNumberOfPerksAvailableToClass = 1
     const [perksSelected, setPerksSelected] = useState(Array(totalNumberOfPerksAvailableToClass).fill(false))
     const [characterClassLevel, setCharacterClassLevel] = useState(1)
@@ -39,4 +39,3 @@ function CharacterClassDisplay({characterClassName, allCharacterClassPerks} : Ch
     )
 }
 
-export default CharacterClassDisplay;
