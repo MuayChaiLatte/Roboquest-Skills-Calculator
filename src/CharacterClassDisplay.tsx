@@ -3,7 +3,7 @@ import {useState} from 'react';
 import CharacterClassStats from './CharacterClassStats';
 import Perk from './Perk';
 
-interface ClassPerk {
+export interface ClassPerk {
     perkName: string,
     perkDescription: string
 }
