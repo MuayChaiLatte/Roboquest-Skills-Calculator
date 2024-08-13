@@ -26,15 +26,23 @@ export function CharacterClassDisplay({characterClassName, allCharacterClassPerk
         nextPerksSelected[0] ? setCharacterClassLevel(characterClassLevel + 1) : setCharacterClassLevel(characterClassLevel - 1);
     }
 
+    const perkList = allCharacterClassPerks.map((classPerk, index) =>
+        <li key={classPerk.id}>
+          <Perk 
+            perkName={classPerk.perkName}
+            perkDescription={classPerk.perkDescription}
+            isPerkSelected={perksSelected[index]}
+            onPerkClick={handlePerkClick}
+           />
+        </li>
+      )
+
     return (
         <div>
             <CharacterClassStats characterClassName='Guardian' characterClassLevel={characterClassLevel}/>
-            <Perk 
-            perkName='Stim Bubble' 
-            perkDescription='While Bastion is active, increases weapons damage by 30%, firerate by 30% and movement speed by 18%.'
-            isPerkSelected={perksSelected[0]}
-            onPerkClick={handlePerkClick}
-            />
+            <ul>
+          {perkList}
+            </ul>
         </div>
     )
 }
