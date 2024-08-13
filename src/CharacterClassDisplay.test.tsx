@@ -10,12 +10,14 @@ const mockCharacterClassDisplayProps: CharacterClassDisplayProps = {
         {
             perkName: 'Stim Bubble',
             perkDescription: 'While Bastion is active, increases weapons damage by 30%, firerate by 30% and movement speed by 18%.',
-            id: 'GUAPRI1'
+            id: 'GUAPRI1',
+            perkSelected: false
         },
         {
             perkName: 'Safe Space',
             perkDescription: 'Reduces Bastion cooldown by 10%. While Bastion is active, repairs 5% of your scratch damage every 1s.',
-            id: 'GUAPRI2'
+            id: 'GUAPRI2',
+            perkSelected: false
         }
     ]
 }
