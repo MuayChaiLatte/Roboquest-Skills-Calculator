@@ -5,7 +5,8 @@ import Perk from './Perk';
 
 export interface ClassPerk {
     perkName: string,
-    perkDescription: string
+    perkDescription: string,
+    id: string
 }
 
 export interface CharacterClassDisplayProps {
