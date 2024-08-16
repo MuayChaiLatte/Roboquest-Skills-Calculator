@@ -1,24 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { CharacterClassDisplay, CharacterClassDisplayProps } from './CharacterClassDisplay';
+
+
+const mockCharacterClassDisplayProps: CharacterClassDisplayProps = {
+  characterClassName: "Guardian",
+  allCharacterClassPerks: [
+      {
+          perkName: 'Stim Bubble',
+          perkDescription: 'While Bastion is active, increases weapons damage by 30%, firerate by 30% and movement speed by 18%.',
+          id: 'GUAPRI1',
+          perkSelected: false
+      },
+      {
+          perkName: 'Safe Space',
+          perkDescription: 'Reduces Bastion cooldown by 10%. While Bastion is active, repairs 5% of your scratch damage every 1s.',
+          id: 'GUAPRI2',
+          perkSelected: false
+      }
+  ]
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CharacterClassDisplay {...mockCharacterClassDisplayProps} />
     </div>
   );
 }
