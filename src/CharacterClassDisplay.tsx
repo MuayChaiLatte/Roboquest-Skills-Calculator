@@ -22,7 +22,7 @@ export function CharacterClassDisplay({characterClassName, allCharacterClassPerk
 
 
     function handlePerkClick (classPerkIndex : number) {
-        const nextPerksSelected = perksSelected.slice();
+        const nextPerksSelected = JSON.parse(JSON.stringify(perksSelected.slice()));
         nextPerksSelected[classPerkIndex].isPerkSelected = !nextPerksSelected[classPerkIndex].isPerkSelected;
         setPerksSelected(nextPerksSelected);
         nextPerksSelected[classPerkIndex].isPerkSelected ? setCharacterClassLevel(characterClassLevel + 1) : setCharacterClassLevel(characterClassLevel - 1);
