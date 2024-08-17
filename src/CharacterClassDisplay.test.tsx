@@ -33,7 +33,7 @@ test("Selecting each available Perk consecutively increases characterClassLevel 
     const buttons = screen.getAllByText('Select', {selector: 'button'});
     const characterClassLevel = screen.getByText(/Level: /);
 
-    // Grab every button 
+    // Click every button once
     for (let i=0; i < buttons.length; i++) {
         await user.click(buttons[i]);
         expect(characterClassLevel).toHaveTextContent(`Level: ${i+2}`);
@@ -52,10 +52,12 @@ test("Each Perk increments characterLevel when selected then decrements characte
     const buttons = screen.getAllByText('Select', {selector: 'button'});
     const characterClassLevel = screen.getByText(/Level: /);
 
-    // Grab every button 
+    // Click each button twice before clicking the next button
     for (let i=0; i < buttons.length; i++) {
         await user.click(buttons[i]);
-        expect(characterClassLevel).toHaveTextContent(`Level: ${i+2}`);
+        expect(characterClassLevel).toHaveTextContent(`Level: 2`);
+        await user.click(buttons[i]);
+        expect(characterClassLevel).toHaveTextContent(`Level: 1`);
     }
 
 })
