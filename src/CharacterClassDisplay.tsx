@@ -7,7 +7,7 @@ export interface ClassPerk {
     perkName: string,
     perkDescription: string,
     id: string,
-    perkSelected: boolean
+    isPerkSelected: boolean
 }
 
 
@@ -23,9 +23,9 @@ export function CharacterClassDisplay({characterClassName, allCharacterClassPerk
 
     function handlePerkClick (classPerkIndex : number) {
         const nextPerksSelected = perksSelected.slice();
-        nextPerksSelected[classPerkIndex].perkSelected = !nextPerksSelected[classPerkIndex].perkSelected;
+        nextPerksSelected[classPerkIndex].isPerkSelected = !nextPerksSelected[classPerkIndex].isPerkSelected;
         setPerksSelected(nextPerksSelected);
-        nextPerksSelected[classPerkIndex].perkSelected ? setCharacterClassLevel(characterClassLevel + 1) : setCharacterClassLevel(characterClassLevel - 1);
+        nextPerksSelected[classPerkIndex].isPerkSelected ? setCharacterClassLevel(characterClassLevel + 1) : setCharacterClassLevel(characterClassLevel - 1);
     }
 
     const perkList = allCharacterClassPerks.map((classPerk, index) =>
@@ -33,7 +33,7 @@ export function CharacterClassDisplay({characterClassName, allCharacterClassPerk
           <Perk 
             perkName={classPerk.perkName}
             perkDescription={classPerk.perkDescription}
-            isPerkSelected={classPerk.perkSelected}
+            isPerkSelected={classPerk.isPerkSelected}
             onPerkClick={() => handlePerkClick(index)}
            />
         </li>
