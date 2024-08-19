@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface PerkProps {
+export interface PerkProps {
   perkName: string,
   perkDescription: string,
   isPerkSelected: Boolean,
@@ -8,7 +8,7 @@ interface PerkProps {
 }
 
 
-function Perk({perkName, perkDescription, isPerkSelected, onPerkClick}: PerkProps) {
+export function Perk({perkName, perkDescription, isPerkSelected, onPerkClick}: PerkProps) {
 
   return (
     <div className="Perk">
@@ -20,4 +20,3 @@ function Perk({perkName, perkDescription, isPerkSelected, onPerkClick}: PerkProp
   );
 }
 
-export default Perk;

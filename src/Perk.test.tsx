@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Perk from './Perk';
+import {Perk, PerkProps} from './Perk';
 import userEvent from '@testing-library/user-event';
 
 // Making test data
