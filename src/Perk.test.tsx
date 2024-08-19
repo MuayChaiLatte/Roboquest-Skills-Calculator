@@ -3,28 +3,24 @@ import { render, screen } from '@testing-library/react';
 import {Perk, PerkProps} from './Perk';
 import userEvent from '@testing-library/user-event';
 
-// Making test data
-const mockPerkAvailableToThisClass: { name: string, description: string } = {
-    name: 'Stim Bubble',
-    description: 'While Bastion is active, increases weapons damage by 30%, firerate by 30% and movement speed by 18%.'
+// Making test data - onPerkClick is a void function as this is a callback function affecting state in Perk's parent component that toggles the value of isPerkSelected passed to Perk
+const mockPerkProps: PerkProps = {
+    perkName: 'Stim Bubble',
+    perkDescription: 'While Bastion is active, increases weapons damage by 30%, firerate by 30% and movement speed by 18%.',
+    isPerkSelected: false,
+    onPerkClick: () => {}
 }
 
 test("Perk renders with the correct description", () => {
     
     // Render Component
-    render(<Perk name={mockPerkAvailableToThisClass.name} description={mockPerkAvailableToThisClass.description} />);
+    render(<Perk {...mockPerkProps} />);
 
     // Grab elements the Component should have rendered
-    const nameElement = screen.getByText(mockPerkAvailableToThisClass.name);
-    const descriptionElement = screen.getByText(mockPerkAvailableToThisClass.description);
+    const nameElement = screen.getByText(mockPerkProps.perkName);
+    const descriptionElement = screen.getByText(mockPerkProps.perkDescription);
     
     // Assertion: correct elements exist and display correct information
     expect(nameElement).toBeInTheDocument
     expect(descriptionElement).toBeInTheDocument
-})
-
-test("Toggle Selected Flag text visible", async () => {
-    render(<Perk name={mockPerkAvailableToThisClass.name} description={mockPerkAvailableToThisClass.description} />);
-    await userEvent.click(screen.getByText(/perk selected/i));
-    expect(screen.getByText(/perk selected/i)).toBeInTheDocument();
 })
